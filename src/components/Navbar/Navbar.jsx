@@ -12,6 +12,8 @@ import NewPoll2 from '../MakePoll/NewPoll2';
 import Avatar from '@material-ui/core/Avatar';
 import { deepOrange }  from '@material-ui/core/colors';
 import Admin from '../Admin/Admin';
+import Massie from '../Team/Massie'
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -82,6 +84,9 @@ export default function SearchAppBar(props) {
           <Typography className={classes.title} variant="h6" noWrap>
             HelpMeDecide
           </Typography>
+          <Link to='/massie'>
+          <Button type="submit" variant="contained" color="primary" className="submit" >Massie</Button>
+          </Link>
           <Link to='/'>
           <Button type="submit" variant="contained" color="primary" className="submit" >Poll</Button>
           </Link>
@@ -108,16 +113,20 @@ export default function SearchAppBar(props) {
         </Toolbar>
       </AppBar>
       <Switch>
-        <Route exact path='/'>
-          <Home />
-        </Route>
-        <Route exact path='/newPoll'>
-          <NewPoll2 />
-        </Route>
-        <Route exact path='/admin'>
-          <Admin />
-        </Route>
-      </Switch>
+      
+      <Route exact path='/'>
+        <Home />
+      </Route>
+      <Route exact path='/newPoll'>
+        <NewPoll2 />
+      </Route>
+      <Route exact path='/admin'>
+        <Admin />
+      </Route>
+      <Route exact path='/massie'>
+        <Massie />
+      </Route>
+    </Switch>
       
     </div>
   );
