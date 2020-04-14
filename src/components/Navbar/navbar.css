@@ -1,7 +1,7 @@
 .right {
     position: absolute;
     min-width: 20vw;
-    width: 15vw;
+    width: 45vw;
     right: 0vw;
     display: flex;
     flex-direction: row;

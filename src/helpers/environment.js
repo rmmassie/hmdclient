@@ -11,6 +11,9 @@ switch (window.location.hostname) {
     case 'hmdclient.herokuapp.com':
         // this is the full url of your deployed API
         APIURL = 'https://hmdserver.herokuapp.com/'
+        break;
+    default: 
+        APIURL = 'https://hmdserver.herokuapp.com/'
 }
 
 export default APIURL;

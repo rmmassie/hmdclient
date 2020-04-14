@@ -1,6 +1,6 @@
 import React from 'react';
-import { AppBar, Toolbar, InputBase, Button, Avatar, IconButton } from '@material-ui/core';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { AppBar, Toolbar, Button, Avatar } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import { deepOrange }  from '@material-ui/core/colors';
 import { Route, Link, Switch } from 'react-router-dom';
 
@@ -63,24 +63,24 @@ export default function SearchAppBar(props) {
             </div>
             <h3 className="navH3">Create A New Poll</h3>
             <Link to='/newPoll'>
-            <Button type="submit" variant="contained" color="secondary" class="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedSecondary" >+</Button>
+            <Button type="submit" variant="contained" color="secondary" className="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedSecondary" >+</Button>
             </Link>
             <Link to='/'>
-            <Button type="submit" variant="contained" color="default" class="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" >View Polls</Button>
+            <Button type="submit" variant="contained" color="default" className="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" >View Polls</Button>
             </Link>
           </div>
           <div className="right">
             <Link to='/quinn'>
-            <Button type="submit" variant="contained" color="default" class="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" >Edwards</Button>
+            <Button type="submit" variant="contained" color="default" className="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" >Edwards</Button>
             </Link>
             <Link to='/jeopardy'>
-            <Button type="submit" variant="contained" color="default" class="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" >Lowe</Button>
+            <Button type="submit" variant="contained" color="default" className="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" >Lowe</Button>
             </Link>
             
             <Link to='/massie'>
-            <Button type="submit" variant="contained" color="default" class="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" >Massie</Button>
+            <Button type="submit" variant="contained" color="default" className="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" >Massie</Button>
             </Link>
-            /jeopardy
+            
             
             <Button type="submit" variant="contained" color="default" class="signout MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" onClick={props.splash}>Sign Out</Button>
             

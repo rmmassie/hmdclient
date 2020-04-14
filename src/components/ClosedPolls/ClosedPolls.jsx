@@ -31,7 +31,7 @@ class OpenPoll extends React.Component {
                 }
             pollArray.push(pollObj)
             }
-            console.log(pollArray)
+            
             
             this.setState({
                 polls: pollArray
