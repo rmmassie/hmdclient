@@ -7,9 +7,11 @@ import { Route, Link, Switch } from 'react-router-dom';
 import Home from '../Home/Home';
 import NewPoll2 from '../MakePoll/NewPoll2';
 import Admin from '../Admin/Admin';
+import Jeopardy from '../Team/Jeopardy'
 import Massie from '../Team/Massie'
 import Quinn from '../Team/Quinn'
 import './navbar.css'
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,6 +56,7 @@ export default function SearchAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
+
           <div className="left">
             <div className="navContainer">
             <img className="navimg" src="/logotm.png" alt=""/>
@@ -67,12 +70,17 @@ export default function SearchAppBar(props) {
             </Link>
           </div>
           <div className="right">
-            
+            <Link to='/quinn'>
+            <Button type="submit" variant="contained" color="default" class="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" >Edwards</Button>
+            </Link>
+            <Link to='/jeopardy'>
+            <Button type="submit" variant="contained" color="default" class="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" >Lowe</Button>
+            </Link>
             
             <Link to='/massie'>
             <Button type="submit" variant="contained" color="default" class="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" >Massie</Button>
             </Link>
-            
+            /jeopardy
             
             <Button type="submit" variant="contained" color="default" class="signout MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" onClick={props.splash}>Sign Out</Button>
             
@@ -98,7 +106,7 @@ export default function SearchAppBar(props) {
         </Toolbar>
       </AppBar>
       <Switch>
-      
+
       <Route exact path='/'>
         <Home />
       </Route>
@@ -114,8 +122,10 @@ export default function SearchAppBar(props) {
       <Route exact path='/quinn'>
         <Quinn />
       </Route>
+        <Route exact Path='/jeopardy'>
+          <Jeopardy/>
+        </Route>
     </Switch>
-      
     </div>
   );
 }
