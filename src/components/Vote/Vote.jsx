@@ -40,7 +40,7 @@ class Vote extends React.Component {
     fetch(`${APIURL}poll/${fetchId}`, requestOptions)
     .then(response => response.json())
     .then(result => {
-        fetch(`${APIURL}/response/get/${fetchId}`)
+        fetch(`${APIURL}response/get/${fetchId}`)
         .then(voteResponse => voteResponse.json())
         .then(votes => {
             let voted
