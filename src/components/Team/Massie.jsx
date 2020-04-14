@@ -40,7 +40,7 @@ class Massie extends React.Component {
   
 
   componentWillMount() {
-    fetch(`http://taco-randomizer.herokuapp.com/random/?full-taco=true`)
+    fetch(`https://taco-randomizer.herokuapp.com/random/?full-taco=true`)
     .then(response => response.json())
     .then(taco => {
       this.setState({

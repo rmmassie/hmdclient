@@ -29,7 +29,7 @@ class Quinn extends React.Component<Props, State> {
 
     
     componentDidMount() {
-        fetch('http://www.boredapi.com/api/activity/')
+        fetch('https://www.boredapi.com/api/activity/')
         .then(response => response.json())
         .then(result => {
             this.setState({

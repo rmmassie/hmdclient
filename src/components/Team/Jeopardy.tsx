@@ -32,7 +32,7 @@ class Jeopardy extends React.Component<Props, State> {
   }
     
     componentDidMount () {      
-     fetch("http://jservice.io/api/random")
+     fetch("https://jservice.io/api/random")
     .then(response => response.json())
     .then(result => {
     this.setState({
