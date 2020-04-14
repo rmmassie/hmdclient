@@ -57,8 +57,7 @@ class OpenPoll extends React.Component {
                 return (
                 <ExpansionPanel key={poll.id}>
                     <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} aria-label="Expand" aria-controls="additional-actions1-content" id="additional-actions1-header">
-                    Poll ID - {poll.id} - {poll.question}
-                    </ExpansionPanelSummary>
+                   {poll.question}</ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                         <p className="pollSolution">{poll.solution1} or {poll.solution2}</p><br></br>
                         <Button variant="contained" color="secondary" onClick={() => this.props.setVote(true, poll.id)}>Vote!</Button>
