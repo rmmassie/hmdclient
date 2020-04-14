@@ -40,7 +40,7 @@ class Login extends React.Component {
       redirect: 'follow'
     };
 
-fetch(`${APIURL}user/login`, requestOptions)
+fetch(`https://hmdserver.herokuapp.com/user/login`, requestOptions)
   .then(response => response.json())
   .then(result => {
     if ("error" in result) {
