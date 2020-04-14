@@ -1,18 +1,15 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
+import { AppBar, Toolbar, InputBase, Button, Avatar, IconButton } from '@material-ui/core';
 import { fade, makeStyles } from '@material-ui/core/styles';
-import SearchIcon from '@material-ui/icons/Search';
-import Button from '@material-ui/core/Button';
-import Home from '../Home/Home';
-import { Route, Link, Switch } from 'react-router-dom';
-import NewPoll2 from '../MakePoll/NewPoll2';
-import Avatar from '@material-ui/core/Avatar';
 import { deepOrange }  from '@material-ui/core/colors';
+import { Route, Link, Switch } from 'react-router-dom';
+
+import Home from '../Home/Home';
+import NewPoll2 from '../MakePoll/NewPoll2';
 import Admin from '../Admin/Admin';
 import Massie from '../Team/Massie'
+import './navbar.css'
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -28,29 +25,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
-  },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
-      width: 'auto',
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   inputRoot: {
     color: 'inherit',
@@ -81,35 +55,47 @@ export default function SearchAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Typography className={classes.title} variant="h6" noWrap>
-            HelpMeDecide
-          </Typography>
-          <Link to='/massie'>
-          <Button type="submit" variant="contained" color="primary" className="submit" >Massie</Button>
-          </Link>
-          <Link to='/'>
-          <Button type="submit" variant="contained" color="primary" className="submit" >Poll</Button>
-          </Link>
-          <Link to='/newPoll'>
-          <Button type="submit" variant="contained" color="primary" className="submit" >Make a Poll</Button>
-          </Link>
-          <Link to='/admin'>
-          <Avatar className={classes.orange}>OP</Avatar>
-          </Link>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
+          <div className="left">
+            <div className="navContainer">
+            <img className="navimg" src="/logotm.png" alt=""/>
             </div>
-            <InputBase
+            <h3 className="navH3">Create A New Poll</h3>
+            <Link to='/newPoll'>
+            <Button type="submit" variant="contained" color="secondary" class="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedSecondary" >+</Button>
+            </Link>
+            <Link to='/'>
+            <Button type="submit" variant="contained" color="default" class="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" >View Polls</Button>
+            </Link>
+          </div>
+          <div className="right">
+            
+            
+            <Link to='/massie'>
+            <Button type="submit" variant="contained" color="default" class="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" >Massie</Button>
+            </Link>
+            
+            
+            <Button type="submit" variant="contained" color="default" class="signout MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" onClick={props.splash}>Sign Out</Button>
+            
+            {/* <div className={classes.search}>
+              <div className={classes.searchIcon}>
+              <SearchIcon />
+              </div>
+              <InputBase
               placeholder="Search…"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
-            />
-            <Button type="submit" variant="contained" color="primary" className="submit" onClick={props.splash}>Sign Out</Button>
-          </div>
+              />
+            </div> */}
+              
+            <Link to='/admin'>
+            <Avatar className={classes.orange}>OP</Avatar>
+            </Link>
+          </div>       
+          
         </Toolbar>
       </AppBar>
       <Switch>
