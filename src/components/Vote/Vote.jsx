@@ -2,6 +2,7 @@ import React from 'react';
 import './Vote.css'
 import { LinearProgress, Button } from '@material-ui/core/';
 import Chart from './voteChart'
+import APIURL from './helpers/environment'
 
 class Vote extends React.Component {
   constructor(props) {
@@ -36,10 +37,10 @@ class Vote extends React.Component {
     body: body,
     redirect: 'follow'
     };
-    fetch(`http://localhost:3001/poll/${fetchId}`, requestOptions)
+    fetch(`${APIURL}/poll/${fetchId}`, requestOptions)
     .then(response => response.json())
     .then(result => {
-        fetch(`http://localhost:3001/response/get/${fetchId}`)
+        fetch(`${APIURL}/response/get/${fetchId}`)
         .then(voteResponse => voteResponse.json())
         .then(votes => {
             let voted
@@ -95,7 +96,7 @@ class Vote extends React.Component {
             redirect: 'follow'
             };
 
-        fetch(`http://localhost:3001/response/${pollId}`, requestOptions)
+        fetch(`${APIURL}/response/${pollId}`, requestOptions)
         .then(response => response.json())
         .then(result => {
             this.setState({

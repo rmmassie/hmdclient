@@ -1,6 +1,5 @@
 import React from 'react';
-
-
+import APIURL from './helpers/environment'
 
 class Admin extends React.Component {
   constructor(props) {
@@ -25,7 +24,7 @@ let requestOptions = {
   redirect: 'follow'
 };
 console.log(requestOptions)
-fetch("http://localhost:3001/admin/", requestOptions)
+fetch(`${APIURL}/admin/`, requestOptions)
   .then(response => response.json())
   .then(result => {
       this.setState({

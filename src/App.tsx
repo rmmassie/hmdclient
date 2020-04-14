@@ -5,6 +5,7 @@ import Login from './components/Login/login'
 import Splash from './components/Splash/Splash'
 import Navbar from './components/Navbar/Navbar'
 import { BrowserRouter as Router } from 'react-router-dom';
+import APIURL from './helpers/environment'
 
 
 interface Props {

@@ -6,6 +6,7 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import APIURL from './helpers/environment'
 
 class OpenPoll extends React.Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class OpenPoll extends React.Component {
 //Prior to mounting, fetch all active polls, store them in and array, and push the array to the polls state variable
     componentWillMount() {
         let pollArray = []
-        fetch('http://localhost:3001/poll/status/active')
+        fetch(`${APIURL}/poll/status/active`)
         .then(response => response.json())
         .then(result => {        
             for (let i=0; i < result.length; i++) {
