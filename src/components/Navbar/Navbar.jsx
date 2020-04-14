@@ -13,6 +13,7 @@ import Avatar from '@material-ui/core/Avatar';
 import { deepOrange }  from '@material-ui/core/colors';
 import Admin from '../Admin/Admin';
 import Massie from '../Team/Massie'
+import Quinn from '../Team/Quinn'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -87,6 +88,9 @@ export default function SearchAppBar(props) {
           <Link to='/massie'>
           <Button type="submit" variant="contained" color="primary" className="submit" >Massie</Button>
           </Link>
+          <Link to='/quinn'>
+            <Button type="submit" variant="contained" color="primary" className="submit">Quinn</Button>
+          </Link>
           <Link to='/'>
           <Button type="submit" variant="contained" color="primary" className="submit" >Poll</Button>
           </Link>
@@ -125,6 +129,9 @@ export default function SearchAppBar(props) {
       </Route>
       <Route exact path='/massie'>
         <Massie />
+      </Route>
+      <Route exact path='/quinn'>
+        <Quinn />
       </Route>
     </Switch>
       
