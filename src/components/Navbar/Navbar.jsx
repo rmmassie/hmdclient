@@ -12,6 +12,7 @@ import NewPoll2 from '../MakePoll/NewPoll2';
 import Avatar from '@material-ui/core/Avatar';
 import { deepOrange }  from '@material-ui/core/colors';
 import Admin from '../Admin/Admin';
+import Jeopardy from '../Team/Jeopardy'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -82,6 +83,9 @@ export default function SearchAppBar(props) {
           <Typography className={classes.title} variant="h6" noWrap>
             HelpMeDecide
           </Typography>
+          <Link to='/jeopardy'>
+          <Button type="submit" variant="contained" color="primary" className="submit" >Lowe</Button>
+          </Link>
           <Link to='/'>
           <Button type="submit" variant="contained" color="primary" className="submit" >Poll</Button>
           </Link>
@@ -116,6 +120,9 @@ export default function SearchAppBar(props) {
         </Route>
         <Route exact path='/admin'>
           <Admin />
+        </Route>
+        <Route exact Path='/jeopardy'>
+          <Jeopardy/>
         </Route>
       </Switch>
       
