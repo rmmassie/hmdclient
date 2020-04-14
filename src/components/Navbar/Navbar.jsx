@@ -8,9 +8,8 @@ import Home from '../Home/Home';
 import NewPoll2 from '../MakePoll/NewPoll2';
 import Admin from '../Admin/Admin';
 import Massie from '../Team/Massie'
+import Quinn from '../Team/Quinn'
 import './navbar.css'
-
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -111,6 +110,9 @@ export default function SearchAppBar(props) {
       </Route>
       <Route exact path='/massie'>
         <Massie />
+      </Route>
+      <Route exact path='/quinn'>
+        <Quinn />
       </Route>
     </Switch>
       
