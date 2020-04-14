@@ -37,7 +37,10 @@ class Register extends React.Component {
     };
 
 fetch(`${APIURL}user/createuser`, requestOptions)
-  .then(response => response.json())
+  .then(response => {
+    console.log(`${APIURL}`)
+    response.json()
+  })
   .then(result => {
     try {
       localStorage.setItem('session', result.sessionToken);
