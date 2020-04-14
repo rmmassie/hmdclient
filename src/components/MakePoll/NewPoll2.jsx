@@ -1,7 +1,7 @@
 import React from 'react';
 import './Poll.css'
 import { FormLabel, Button, TextField } from '@material-ui/core'
-import APIURL from './helpers/environment'
+import APIURL from '../../helpers/environment'
 
 
 class NewPoll2 extends React.Component {
@@ -48,7 +48,7 @@ class NewPoll2 extends React.Component {
         redirect: 'follow'
         };
 
-        fetch(`${APIURL}/poll/new/newPoll`, requestOptions)
+        fetch(`${APIURL}poll/new/newPoll`, requestOptions)
         .then(response => response.json())
         .then(result => {
             console.log(result)

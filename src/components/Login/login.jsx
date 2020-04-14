@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import './login.css';
-import APIURL from './helpers/environment'
+import APIURL from '../../helpers/environment'
 
 
 class Login extends React.Component {
@@ -40,7 +40,7 @@ class Login extends React.Component {
       redirect: 'follow'
     };
 
-fetch(`${APIURL}/user/login`, requestOptions)
+fetch(`${APIURL}user/login`, requestOptions)
   .then(response => response.json())
   .then(result => {
     if ("error" in result) {
