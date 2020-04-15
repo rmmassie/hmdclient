@@ -27,14 +27,12 @@ class Vote extends React.Component {
     let fetchId = this.props.pollId
     let token = localStorage.getItem('session')
     let myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-
-    let body = JSON.stringify({"session":token});
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", token);
 
     var requestOptions = {
     method: 'POST',
     headers: myHeaders,
-    body: body,
     redirect: 'follow'
     };
     fetch(`${APIURL}poll/${fetchId}`, requestOptions)
@@ -85,16 +83,17 @@ class Vote extends React.Component {
         let token = localStorage.getItem('session')
         let pollId = this.props.pollId
         let myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Authorization", token);
 
-            let body = JSON.stringify({"session":token,"vote":choice});
+        let body = JSON.stringify({"vote":choice});
 
-            var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: body,
-            redirect: 'follow'
-            };
+        var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: body,
+        redirect: 'follow'
+        };
 
         fetch(`${APIURL}response/${pollId}`, requestOptions)
         .then(response => response.json())
