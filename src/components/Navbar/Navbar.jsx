@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SearchAppBar(props) {
   const classes = useStyles();
-
+  console.log(props)
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -84,19 +84,7 @@ export default function SearchAppBar(props) {
             
             <Button type="submit" variant="contained" color="default" className="signout MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" onClick={props.splash}>Sign Out</Button>
             
-            {/* <div className={classes.search}>
-              <div className={classes.searchIcon}>
-              <SearchIcon />
-              </div>
-              <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-              />
-            </div> */}
+            
               
             <Link to='/admin'>
             <Avatar className={classes.orange}>OP</Avatar>

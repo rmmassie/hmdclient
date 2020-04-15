@@ -1,13 +1,20 @@
 .homeVote {
     position: absolute;
-    top: 50vh;
+    top: 3vh;
     left: 50vw;
     width: 100vw;
-    height: 100vh;
-    transform: translate(-50%, -50%)
+    height: 97vh;
+    padding-left:15vw;
+    padding-right:15vw;
+    padding-top: 2vh;
+    
+    overflow: hidden;
+    transform: translate(-50%, 0%)
+    
 }
 
-.chart {
-    height: 55vh;
-    width: auto;
-}
+body {  
+    background: #1D1F20;
+    
+  }
+ 
