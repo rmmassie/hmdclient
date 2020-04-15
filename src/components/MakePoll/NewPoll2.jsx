@@ -18,7 +18,7 @@ class NewPoll2 extends React.Component {
 }
 
     pollSubmit(event) {
-        event.preventDefault()
+        //event.preventDefault()
         console.log("The Question is: ", this.state.pollQuestion)
         console.log("Option 1 is: ", this.state.answer1)
         console.log("Option 2 is: ", this.state.answer2)
