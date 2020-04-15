@@ -1,5 +1,6 @@
 import React from 'react';
 import APIURL from '../../helpers/environment'
+import './Admin.css'
 
 class Admin extends React.Component {
   constructor(props) {
@@ -38,14 +39,16 @@ fetch(`${APIURL}admin/`, requestOptions)
 }
   render() {
       return (
-          <div>
+          <div id='Admin'>
             {
                 this.state.poll.map((poll, index) => {
                     console.log('The index is:', index, 'The poll is:', poll.question)
                     return (
-                        <div>
-                            <h3>{poll.question}</h3>
-                            <p>{poll.solution1} or {poll.solution2}</p>
+                        <div className='adminController'>
+                          <div className='questionPoll'>
+                            <h3 className='h3'>{poll.question}</h3>
+                            <p className='p'>{poll.solution1} or {poll.solution2}</p>
+                          </div>
                         </div>
                         )
                 }) 

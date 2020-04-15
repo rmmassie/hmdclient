@@ -51,7 +51,7 @@ class NewPoll2 extends React.Component {
         .then(response => response.json())
         .then(result => {
             console.log(result)
-            alert("Your Poll Has Been Recorded! In 48 Hours, We'll send your the community's response!")
+            alert("Your Poll Has Been Recorded! In 48 Hours, We'll send you the community's response!")
         })
         
         .catch(error => console.log('error', error));
