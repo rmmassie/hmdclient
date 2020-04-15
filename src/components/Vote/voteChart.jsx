@@ -1,6 +1,6 @@
 import React from 'react';
 import './Vote.css'
-import { Doughnut } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 
 
 
@@ -38,7 +38,10 @@ render() {
     console.log(this.props)
     return (
     <div className="chart">
-        <Doughnut data={this.state.data} />
+        <Pie height="110" data={this.state.data} options={{
+          responsive: true,
+          maintainAspectRatio: true
+        }}/>
     </div>
     )
     

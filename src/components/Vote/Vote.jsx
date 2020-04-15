@@ -113,7 +113,8 @@ render() {
     if (this.state.havePoll === true && this.state.hasVoted === false) {
         return (
             <div className="homeVote">
-                <h2>POLL ID is {this.props.pollId}</h2>
+                <div className="chartSummary">
+                <Button variant="contained" color="primary" onClick={() => this.props.setVote(false)}>Back to Polls</Button>
                <h2>{this.state.question}</h2>
                <p>{this.state.summary}</p>
                <p>Cast your vote to see the results</p>
@@ -126,8 +127,9 @@ render() {
                     
                     <Button variant="contained" color="secondary" onClick={() => {this.voteHandler(2)}}>Vote Option 2</Button>
                </div>
+               </div>
                <Chart solutions={[this.state.solution1,this.state.solution2,this.state.solution1count,this.state.solution2count]}/>
-               <Button variant="contained" color="primary" onClick={() => this.props.setVote(false)}>Back to Polls</Button>
+               
     
             </div>
             )
@@ -140,27 +142,33 @@ render() {
         if (this.state.vote === 1) {
             return (
                 <div className="homeVote">
+                    <div className="chartSummary">
                      <h2>{this.state.question}</h2>
                     <p>{this.state.summary}</p>
                     <p><b>You voted for {this.state.solution1}</b></p>
                     <h3>{winnerBy}% of the community thinks that {theWinner} is the best answer to your question.</h3>
                     <p>{voteCount} members participated in this poll.</p>
-
-                    <Chart solutions={[this.state.solution1,this.state.solution2,this.state.solution1count,this.state.solution2count]}/>
                     <Button variant="contained" color="primary" onClick={() => this.props.setVote(false)}>Back to Polls</Button>
+                    </div>
+                    <Chart solutions={[this.state.solution1,this.state.solution2,this.state.solution1count,this.state.solution2count]}/>
+                    
     
                 </div>
                 )
         } else if (this.state.vote === 2) {
             return (
                 <div className="homeVote">
+                <div className="chartSummary">
                    <h2>{this.state.question}</h2>
                    <p>{this.state.summary}</p>
                    <p><b>You voted for {this.state.solution2}</b></p>
                    <h3>{winnerBy}% of the community thinks that {theWinner} is the best answer to your question.</h3>
                    <p>{voteCount} members participated in this poll.</p>
-                   <Chart solutions={[this.state.solution1,this.state.solution2,this.state.solution1count,this.state.solution2count]}/>
                    <Button variant="contained" color="primary" onClick={() => this.props.setVote(false)}>Back to Polls</Button>
+                    </div>
+
+                   <Chart solutions={[this.state.solution1,this.state.solution2,this.state.solution1count,this.state.solution2count]}/>
+                   
                  
                 </div>
             )
