@@ -17,7 +17,7 @@ class OpenPoll extends React.Component {
         }
     }
 //Prior to mounting, fetch all active polls, store them in and array, and push the array to the polls state variable
-    componentWillMount() {
+    componentDidMount() {
         let pollArray = []
         fetch(`${APIURL}poll/status/active`)
         .then(response => response.json())
@@ -32,7 +32,6 @@ class OpenPoll extends React.Component {
                 }
             pollArray.push(pollObj)
             }
-            console.log(pollArray)
             
             this.setState({
                 polls: pollArray
@@ -53,18 +52,15 @@ class OpenPoll extends React.Component {
                 {
                 this.state.polls.map(function(poll)
                 {
-                console.log(poll.tags)
                 return (
                 <ExpansionPanel key={poll.id}>
                     <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} aria-label="Expand" aria-controls="additional-actions1-content" id="additional-actions1-header">
-                    Poll ID - {poll.id} - {poll.question}
-                    </ExpansionPanelSummary>
+                   {poll.question}</ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                         <p className="pollSolution">{poll.solution1} or {poll.solution2}</p><br></br>
                         <Button variant="contained" color="secondary" onClick={() => this.props.setVote(true, poll.id)}>Vote!</Button>
                         {
                             poll.tags.map((tag, index) => {
-                                console.log('The index is:', index, 'The tag is:', tag)
                                 return (
                                     <Chip id="Chip" key={index} label={tag} onClick={handleClick}/>
                                     )

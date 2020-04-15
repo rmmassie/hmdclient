@@ -1,0 +1,48 @@
+.right {
+    position: absolute;
+    min-width: 20vw;
+    width: 45vw;
+    right: 0vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    float: right;
+    padding: 15px;
+ }
+
+ .left {
+    position: absolute;
+    
+    min-width: 25vw;
+    width: 30vw;
+    left: 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: right;
+    float: left;
+    
+ }
+
+ .navH3 {
+     color: white;
+     padding-top: 9px;
+     margin-left: 10px;
+     margin-right: 10px;
+ }
+
+.submit {
+    white-space:nowrap;
+    width: fit-content;
+  
+}
+
+.navimg {
+    margin-right: 15px;
+}
+
+.signout {
+    height: 36px;
+}

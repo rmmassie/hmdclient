@@ -1,8 +1,7 @@
 import React from 'react';
 import './Poll.css'
-import { FormLabel, Button, TextField } from '@material-ui/core'
+import { Button, TextField } from '@material-ui/core'
 import APIURL from '../../helpers/environment'
-
 
 class NewPoll2 extends React.Component {
   constructor(props) {
@@ -52,7 +51,7 @@ class NewPoll2 extends React.Component {
         .then(response => response.json())
         .then(result => {
             console.log(result)
-            alert("Your Poll Has Been Recorded! In 48 Hours, We'll send your the community's response!")
+            alert("Your Poll Has Been Recorded! In 48 Hours, We'll send you the community's response!")
         })
         
         .catch(error => console.log('error', error));
@@ -61,52 +60,113 @@ class NewPoll2 extends React.Component {
   render() {
     return (
         <div className="home">
+            <h2>Make a New Poll</h2>
             <div className="pollContainer">
                 <form>
-                    <FormLabel>Question: TLDR;</FormLabel>
-                <TextField required id="standard-required" label="Required" autoComplete="off" onChange={e => {
-                    console.log(e.target.value)
-                    this.setState({
-                        pollQuestion: e.target.value,
-                    })
-              }} placeholder="Question" />
-              <FormLabel>Option 1</FormLabel>
-                <TextField required id="standard-required" label="Required" autoComplete="off" onChange={e => {
-                    console.log(e.target.value)
-                    this.setState({
-                        answer1: e.target.value,
-                    })
-              }} placeholder="First Option" />
-              <FormLabel>Option 2</FormLabel>
-                <TextField required id="standard-required" label="Required" autoComplete="off" onChange={e => {
-                    console.log(e.target.value)
-                    this.setState({
-                        answer2: e.target.value,
-                    })
-              }} placeholder="Second Option" />
-               <FormLabel>Tags (Seperate by Commas)</FormLabel>
-              <TextField required id="standard-required" label="Required" autoComplete="off" onChange={e => {
-                    console.log(e.target.value)
-                    this.setState({
-                        tags: e.target.value,
-                    })
-              }} placeholder="Tags" />
-              <FormLabel>Give Us A Short Summary</FormLabel>
-              <TextField required id="standard-required" label="Required" autoComplete="off" onChange={e => {
-                    console.log(e.target.value)
-                    this.setState({
-                        summary: e.target.value,
-                    })
-              }} placeholder="1000 Character Limit" />
-                <Button
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                    className="submit"
-                    onClick={this.pollSubmit}
-                >
-                    Submit Poll
-                </Button>
+                    <div className="question">
+
+                        <TextField required
+                            label="Summarize the question you'd like help answering:"
+                            id="outlined-helperText"
+                            autoComplete="off" 
+                            onChange={e => {
+                                this.setState({
+                                    pollQuestion: e.target.value,
+                                })}}
+                            fullWidth
+                            variant="outlined"
+                             />
+                    </div>
+                    <hr/>
+                    <div className="question">
+                        <div className="q1">
+                            <TextField required
+                            label="What's Your First Option?"
+                            id="outlined-helperText"
+                            autoComplete="off"
+                            onChange={e => {
+                                this.setState({
+                                    answer1: e.target.value,
+                                })}}
+                            fullWidth
+                            variant="outlined"
+                           
+                            />
+                        </div>
+                        <div className="q1">
+                            
+                            <TextField required 
+                                label="What's Your Second Option?"
+                                id="outlined-helperText" 
+                                autoComplete="off" 
+                                onChange={e => {
+                                    this.setState({
+                                        answer2: e.target.value,
+                                    })}}
+                                fullWidth
+                                variant="outlined"
+                                
+                                />
+                        </div>
+                     </div>
+                    <hr/>
+                    <div className="question">
+                        <TextField required
+                        label="Category Tags (Comma Seperated)"
+                        id="standard-required" 
+                        autoComplete="off" 
+                        onChange={e => {
+                            this.setState({
+                                tags: e.target.value,
+                        })}} 
+                        variant="outlined"
+                        fullWidth/>
+                        
+                    </div>
+                    <hr/>
+                    <div className="question">
+                        <TextField required
+                        id="standard-required" 
+                        label="Provide any context or background that might be helpful for us." 
+                        autoComplete="off" 
+                        onChange={e => {
+                            this.setState({
+                                summary: e.target.value,
+                            })}} 
+                        multiline
+                        rows={4}
+                        fullWidth
+                        variant="outlined"
+                         />
+                    </div>
+                    <hr/>
+                    <div className="question">
+                        <div className="submitdiv">
+                        <Button
+                        type="submit"
+                        variant="contained"
+                        color="primary"
+                        className="submit"
+                        onClick={this.pollSubmit}>
+                        Submit Poll
+                    </Button>
+                    </div>
+                    <div className="notes">
+                    <p>How it works: Fill Out the form above to create a poll 
+                       that others users can vote on. After your poll closes 
+                       in 48 hours, we'll send your results via email, or you 
+                       can view your polls in your user profile.
+                    </p>
+                        </div>    
+                    
+                    </div> 
+                        <div>
+                           
+                        </div>  
+            
+              
+              
+                
                 </form>
             </div>
         </div>

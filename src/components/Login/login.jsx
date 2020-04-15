@@ -78,7 +78,7 @@ render() {
             autoComplete="email"
             autoFocus
             onChange={e => {
-              console.log(e.target.value)
+              
               this.setState({
                 email: e.target.value,
               })
@@ -95,7 +95,7 @@ render() {
             id="password"
             autoComplete="current-password"
             onChange={e => {
-              console.log(e.target.value)
+              
               this.setState({
                 pass: e.target.value,
               })
