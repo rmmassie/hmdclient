@@ -12,18 +12,18 @@ class Admin extends React.Component {
   }
 
 componentDidMount() {
-let myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
 let sessionToken = localStorage.getItem('session');
-let body = JSON.stringify({"token": sessionToken});
-console.log(body)
-let requestOptions = {
+var myHeaders = new Headers();
+myHeaders.append("Authorization", sessionToken);
+myHeaders.append("Content-Type", "application/json");
+
+var requestOptions = {
   method: 'POST',
   headers: myHeaders,
-  body: body,
   redirect: 'follow'
 };
-console.log(requestOptions)
+
+
 fetch(`${APIURL}admin/`, requestOptions)
   .then(response => response.json())
   .then(result => {
@@ -32,7 +32,7 @@ fetch(`${APIURL}admin/`, requestOptions)
         poll: result[1],
         response: result[2]
       })
-      console.log(this.state)
+      
   })
   .catch(error => console.log('error', error));
 }

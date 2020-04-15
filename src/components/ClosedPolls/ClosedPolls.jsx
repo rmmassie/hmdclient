@@ -16,9 +16,22 @@ class OpenPoll extends React.Component {
         }
     }
 //Prior to mounting, fetch all active polls, store them in and array, and push the array to the polls state variable
-    componentWillMount() {
+    componentDidMount() {
+
         let pollArray = []
-        fetch(`${APIURL}poll/status/closed`)
+        let sessionToken = localStorage.getItem('session');
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", sessionToken);
+        myHeaders.append("Content-Type", "application/json");
+
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+          };
+          
+        
+        fetch(`${APIURL}poll/status/closed`, requestOptions)
         .then(response => response.json())
         .then(result => {        
             for (let i=0; i < result.length; i++) {

@@ -82,7 +82,7 @@ export default function SearchAppBar(props) {
             </Link>
             
             
-            <Button type="submit" variant="contained" color="default" class="signout MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" onClick={props.splash}>Sign Out</Button>
+            <Button type="submit" variant="contained" color="default" className="signout MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" onClick={props.splash}>Sign Out</Button>
             
             {/* <div className={classes.search}>
               <div className={classes.searchIcon}>

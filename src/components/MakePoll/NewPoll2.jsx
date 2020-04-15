@@ -25,14 +25,13 @@ class NewPoll2 extends React.Component {
         console.log("Summary is: ", this.state.summary)
 
         //REQUIRE FORM VALIDATION
-        let token = localStorage.getItem('session')
-        console.log(token)
-        const myHeaders = new Headers();
+        let sessionToken = localStorage.getItem('session');
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", sessionToken);
         myHeaders.append("Content-Type", "application/json");
 
         const body = JSON.stringify(
             {
-                "token":token,
                 "question":this.state.pollQuestion,
                 "answer1":this.state.answer1,
                 "answer2":this.state.answer2,
