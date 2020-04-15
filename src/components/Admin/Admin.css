@@ -1,0 +1,32 @@
+.adminController {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 1vw 2vw 0vh; 
+    border-style: dotted;
+    border-radius: 15px;
+}
+
+#Admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: ghostwhite;
+
+}
+
+.questionPoll {
+  display: flex;
+  flex-direction: column;
+  margin: 1vw;
+}
+
+.h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.p {
+    font-size: 12px;
+}

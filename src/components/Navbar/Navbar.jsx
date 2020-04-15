@@ -7,7 +7,7 @@ import { Route, Link, Switch } from 'react-router-dom';
 import Home from '../Home/Home';
 import NewPoll2 from '../MakePoll/NewPoll2';
 import Admin from '../Admin/Admin';
-import Jeopardy from '../Team/Jeopardy'
+import Lowe from '../Team/Lowe'
 import Massie from '../Team/Massie'
 import Quinn from '../Team/Quinn'
 import './navbar.css'
@@ -73,7 +73,7 @@ export default function SearchAppBar(props) {
             <Link to='/quinn'>
             <Button type="submit" variant="contained" color="default" className="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" >Edwards</Button>
             </Link>
-            <Link to='/jeopardy'>
+            <Link to='/lowe'>
             <Button type="submit" variant="contained" color="default" className="MuiButtonBase-root MuiButton-root MuiButton-contained submit MuiButton-containedDefault" >Lowe</Button>
             </Link>
             
@@ -110,8 +110,8 @@ export default function SearchAppBar(props) {
       <Route exact path='/quinn'>
         <Quinn />
       </Route>
-        <Route exact Path='/jeopardy'>
-          <Jeopardy/>
+        <Route exact Path='/lowe'>
+          <Lowe/>
         </Route>
     </Switch>
     </div>
