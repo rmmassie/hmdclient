@@ -37,12 +37,10 @@ class Register extends React.Component {
     };
 
 fetch(`${APIURL}user/createuser`, requestOptions)
-  .then(response => {
-    console.log(`${APIURL}`)
-    response.json()
-  })
+  .then(response => response.json())
   .then(result => {
     try {
+      console.log(result)
       localStorage.setItem('session', result.sessionToken);
       console.log('Session Token Saved in Local Storage')
      this.props.authed()
